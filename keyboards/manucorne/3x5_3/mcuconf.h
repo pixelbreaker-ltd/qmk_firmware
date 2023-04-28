@@ -1,4 +1,5 @@
-/* Copyright 2019
+/**
+ * Copyright 2022 Charly Delay <charly@codesink.dev> (@0xcharly)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,10 +17,10 @@
 
 #pragma once
 
+#include_next "mcuconf.h"
 
-#define RGB_CI_PIN B1
+// #undef RP_SPI_USE_SPI1
+// #define RP_SPI_USE_SPI1 TRUE
 
-#define ADC_PIN F6
-
-// #define QMK_WAITING_TEST_BUSY_PIN F6
-#define QMK_WAITING_TEST_YIELD_PIN F7
+#undef RP_I2C_USE_I2C1
+#define RP_I2C_USE_I2C1 TRUE

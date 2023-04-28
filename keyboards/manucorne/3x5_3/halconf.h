@@ -1,4 +1,5 @@
-/* Copyright 2019
+/**
+ * Copyright 2022 Charly Delay <charly@codesink.dev> (@0xcharly)
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -16,10 +17,7 @@
 
 #pragma once
 
+#define HAL_USE_I2C TRUE
+#define HAL_USE_SPI TRUE
 
-#define RGB_CI_PIN B1
-
-#define ADC_PIN F6
-
-// #define QMK_WAITING_TEST_BUSY_PIN F6
-#define QMK_WAITING_TEST_YIELD_PIN F7
+#include_next "halconf.h"
