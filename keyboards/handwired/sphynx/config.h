@@ -25,6 +25,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
     { GP2, GP3, GP4, GP5 }
 
 #define DIODE_DIRECTION COL2ROW
+#define USB_POLLING_INTERVAL_MS 1
 
 /* Handedness. */
 // #define MASTER_RIGHT
