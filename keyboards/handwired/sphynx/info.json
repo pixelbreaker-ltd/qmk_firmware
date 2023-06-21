@@ -1,5 +1,5 @@
 {
-    "keyboard_name": "Sphynx",
+    "keyboard_name": "Sphynx Alpha",
     "manufacturer": "pixelbreaker",
     "url": "https://www.pixelbreaker.com",
     "maintainer": "pixelbreaker",
@@ -11,7 +11,7 @@
     "processor": "RP2040",
     "bootloader": "rp2040",
     "layouts": {
-        "LAYOUT_split_3x5_4": {
+        "LAYOUT_split_3x5_3": {
             "layout": [
                 {"x": 0, "y": 0},
                 {"x": 1, "y": 0},
@@ -52,12 +52,10 @@
                 {"x": 1, "y": 3},
                 {"x": 2, "y": 3},
                 {"x": 3, "y": 3},
-                {"x": 4, "y": 3},
 
                 {"x": 10, "y": 3},
                 {"x": 11, "y": 3},
-                {"x": 12, "y": 3},
-                {"x": 13, "y": 3}
+                {"x": 12, "y": 3}
             ]
         }
     }
