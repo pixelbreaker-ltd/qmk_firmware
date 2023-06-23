@@ -1,10 +1,10 @@
 {
-    "keyboard_name": "Sphynx Alpha",
+    "keyboard_name": "Sphynx",
     "manufacturer": "pixelbreaker",
     "url": "https://www.pixelbreaker.com",
     "maintainer": "pixelbreaker",
     "usb": {
-        "vid": "0x1978",
+        "vid": "0xDEAD",
         "pid": "0xA666",
         "device_version": "0.0.1"
     },

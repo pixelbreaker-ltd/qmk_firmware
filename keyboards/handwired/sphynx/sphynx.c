@@ -15,8 +15,8 @@ You should have received a copy of the GNU General Public License
 along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 #include "sphynx.h"
-#include <lib/lib8tion/lib8tion.h>
-#include <math.h>
+// #include <lib/lib8tion/lib8tion.h>
+// #include <math.h>
 
 // clang-format off
 #ifdef RGB_MATRIX_ENABLE
@@ -52,25 +52,25 @@ led_config_t g_led_config = { {
 }, {
     /* LED index to physical position. */
     // Left split.
-    /* row L 4  */                                     { 60, 60 }, { 80, 60 },
+    /* row L 4  */                                     { 70, 60 }, { 90, 60 },
     /* row L 3  */ { 0,  40 }, { 20, 40 }, { 40, 40 }, { 60, 40 }, { 80, 40 },
     /* row L 2  */ { 80, 20 }, { 60, 20 }, { 40, 20 }, { 20, 20 }, { 0, 20 },
     /* row L 1  */ { 0,  0 },  { 20, 0 },  { 40, 0 },  { 60, 0 },  { 80, 0 },
-    /* row R 4 */  { 120, 60 }, { 100, 60 },
+    /* row R 4 */  { 90, 60 }, { 110, 60 },
     /* row R 3  */ { 180,  40 }, { 160, 40 }, { 140, 40 }, { 120, 40 }, { 100, 40 },
     /* row R 2  */ { 100,  20 }, { 120, 20 }, { 140, 20 }, { 160, 20 }, { 180, 20 },
     /* row R 1  */ { 180,  0 },  { 160, 0 },  { 140, 0 },  { 120, 0 },  { 100, 0 },
 }, {
     /* LED index to flag. */
     // Left split.
-    /* row L 1  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    /* row L 4  */ LED_FLAG_MODIFIER, LED_FLAG_MODIFIER,
     /* row L 2  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
     /* row L 3  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-    /* row L 4  */ LED_FLAG_MODIFIER, LED_FLAG_MODIFIER,
-    /* row R 1  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-    /* row R 2  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
-    /* row R 3  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    /* row L 1  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
     /* row R 4  */ LED_FLAG_MODIFIER, LED_FLAG_MODIFIER,
+    /* row R 3  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    /* row R 2  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
+    /* row R 1  */ LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT, LED_FLAG_KEYLIGHT,
 } };
 #endif
 // clang-format on
@@ -88,18 +88,3 @@ bool encoder_update_kb(uint8_t index, bool clockwise) {
     }
     return true;
 }
-
-#ifdef SPHYNX_CIRQUE_ROTATION
-report_mouse_t pointing_device_task_kb(report_mouse_t mouse_report) {
-    if (mouse_report.x != 0 || mouse_report.y != 0) {
-        uint16_t theta    = 63; // SPHYNX_CIRQUE_ROTATION * (M_PI / 180.0);
-        int16_t  sinTheta = sin8(theta) - 128;
-        int16_t  cosTheta = cos8(theta) - 128;
-        int16_t  x        = mouse_report.x;
-        int16_t  y        = mouse_report.y;
-        mouse_report.x    = (x)*cosTheta - (y)*sinTheta;
-        mouse_report.y    = (x)*sinTheta + (y)*cosTheta;
-    }
-    return mouse_report;
-}
-#endif

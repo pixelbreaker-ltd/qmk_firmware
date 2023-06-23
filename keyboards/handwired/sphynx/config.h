@@ -57,7 +57,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 #define MOUSE_EXTENDED_REPORT
 
 // Limits the frequency that the sensor is polled for motion.
-// #define POINTING_DEVICE_TASK_THROTTLE_MS 10
+#define POINTING_DEVICE_TASK_THROTTLE_MS 10
 
 // Adjust trackpad rotation.
 // #define POINTING_DEVICE_ROTATION_90
@@ -65,7 +65,7 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Configure for the Cirque model used on the Dilemma.
 #define CIRQUE_PINNACLE_DIAMETER_MM 40
 
-#define SPHYNX_CIRQUE_ROTATION 45
+// #define SPHYNX_CIRQUE_ROTATION 14
 
 /* mouse config */
 // #define MOUSEKEY_INTERVAL 20
@@ -105,14 +105,14 @@ along with this program.  If not, see <http://www.gnu.org/licenses/>.
 // Startup values.
 #    define RGB_MATRIX_DEFAULT_HUE 0
 #    define RGB_MATRIX_DEFAULT_SAT 255
-#    define RGB_MATRIX_DEFAULT_VAL 64
+#    define RGB_MATRIX_DEFAULT_VAL 255
 
 // Rainbow swirl as startup mode.
 #    define ENABLE_RGB_MATRIX_GRADIENT_LEFT_RIGHT
 #    define RGB_MATRIX_DEFAULT_MODE RGB_MATRIX_GRADIENT_LEFT_RIGHT
 
 // Slow swirl at startup.
-#    define RGB_MATRIX_DEFAULT_SPD 127
+#    define RGB_MATRIX_DEFAULT_SPD 128
 
 #    ifndef __arm__
 // Disable control of RGB matrix by keycodes (must use firmware implementation
